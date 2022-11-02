@@ -16,16 +16,9 @@ namespace WebAppDocker.Pages
 
         public void OnGet()
         {
-
             HttpClient client = new HttpClient();
-            //Task<string> responseTask = Task.Run(async ()=> await client.GetStringAsync("http://localhost:5061/api/WeatherForecast").w);
-            //var resultApiCall= responseTask.
-            //var responseObject = JsonSerializer.Deserialize<Class1[]>(response);
 
-            //var responseTask = client.GetStringAsync("http://localhost:5061/api/WeatherForecast").Result;
-            //var responseObject = JsonSerializer.Deserialize<Class1[]>(responseTask);
-
-            Task<string> responseTask = Task.Run(async ()=> await client.GetStringAsync("http://localhost:5061/api/WeatherForecast"));
+            Task<string> responseTask = Task.Run(async ()=> await client.GetStringAsync("http://172.18.0.3/api/WeatherForecast"));
             var resultApiCall = responseTask.Result;
             var responseObject = JsonSerializer.Deserialize<Class1[]>(resultApiCall);
 
