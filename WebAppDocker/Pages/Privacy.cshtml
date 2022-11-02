@@ -6,3 +6,12 @@
 <h1>@ViewData["Title"]</h1>
 
 <p>Use this page to detail your site's privacy policy.</p>
+
+<p>Aqui voy a desplegar el resultado de la llamada a la API del contendor</p>
+
+@foreach(var item in Model.apiResponse){
+    <p>@item.temperatureC | @item.temperatureF</p>
+    <p>@item.summary</p>
+    <p>@item.date</p>
+    <br />
+}
